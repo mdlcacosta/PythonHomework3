@@ -13,7 +13,6 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     clientSocket = socket(AF_INET, SOCK_STREAM)
     clientSocket.connect((mailserver, port))
 
-     while True:
     #clientSocket.accept()
         # Fill in end
 
@@ -40,7 +39,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
 
     # Send RCPT TO command and print server response.
     # Fill in start
-    rcptToCommand = 'RCPT TO: <modesto.jay.acosta@gmail.com>\r\n'
+    rcptToCommand = 'RCPT TO: <"">\r\n'
     clientSocket.send(rcptToCommand.encode())
     recv3 = clientSocket.recv(1024).decode()
     #print(recv3)
