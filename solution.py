@@ -12,8 +12,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
 
     clientSocket = socket(AF_INET, SOCK_STREAM)
     clientSocket.connect((mailserver, port))
-    ehlocommand = 'EHLO\r\n'
-    clientSocket.sendall(b(ehlocommand.encode()))
+
     #clientSocket.accept()
         # Fill in end
 
@@ -75,7 +74,8 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     recv7 = clientSocket.recv(1024).decode()
    # print(recv7)
     # Fill in end
-    clientSocket.close()
+
+
 
 if __name__ == '__main__':
     smtp_client(1025, '127.0.0.1')
